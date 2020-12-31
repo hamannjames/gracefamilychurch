@@ -1,0 +1,20 @@
+/*
+Theme Name: Grace Family Church
+Theme URI: https://github.com/hamannjames/gracefamilychurch.git
+Author: James Hamann
+Description: A theme for grace family church
+Version: 0.9
+Requires PHP: 5.7
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: church, blog, modern, hip
+*/
+
+#construction {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+img {
+  max-width: 100%;
+}
