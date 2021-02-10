@@ -1,0 +1,137 @@
+.main-nav_wrapper {
+  position: fixed;
+  top:0;
+  width:100%;
+  padding:1rem;
+  z-index: 1000;
+  background-color: transparent;
+  transition: background-color ease .3s, padding ease .3s;
+}
+
+.main-nav_container {
+  display: flex;
+  align-items:top;
+  font-size: 2rem;
+  max-width: 1160px;
+  margin: 0 auto;
+
+  li {
+    list-style:none;
+    flex-grow:1;
+    text-align: center;
+    margin-top: .5em;
+    margin-bottom: .5em;
+    flex-basis: 0;
+    order: 1;
+
+    @media screen and (max-width: map-get($breakpoints, 'phone')) {
+      display: none;
+    }
+
+    &#nav-email {
+      @media screen and (max-width: map-get($breakpoints, 'phone')) {
+        display: block;
+      }
+    }
+
+    a {
+      font-size: .8em;
+      padding: .5em;
+      color: #fff;
+      text-decoration: none;
+
+      &:hover {
+        color: $colorsecondary;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+#main-logo {
+
+  &_wrapper {
+    margin-top: 0;
+    min-width: 3em;
+
+    @media screen and (max-width: map-get($breakpoints, 'phone')) {
+      display: block;
+      height: 1.6em;
+      order: 0;
+      margin-top: .25em;
+    }
+  }
+
+  &_container {
+    height: 100%;
+    margin: 0;
+    position: relative;
+
+    @media screen and (max-width: map-get($breakpoints, 'phone')) {
+      display: none;
+    }
+
+    img {
+      width: 100%;
+      max-width: 10em;
+      position:absolute;
+      top:0;
+      left:50%;
+      transform: translateX(-50%);
+    }
+
+    &--mobile {
+      height: 100%;
+      margin: 0;
+      position: relative;
+      transition: opacity ease .3s;
+      opacity: 0;
+
+      @media screen and (max-width: map-get($breakpoints, 'phone')) {
+        opacity: 1;
+      }
+
+      img {
+        width: auto;
+        max-width: 10em;
+        max-height: 100%;
+        position:absolute;
+        top:0;
+        left:50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+}
+
+body.scrolled {
+
+  .main-nav_wrapper {
+    background-color: #fff;
+    padding: 5px 0;
+    box-shadow: 1px 1px 1px #ebebeb;
+  }
+
+  .main-nav_container {
+
+    li {
+
+      a {
+        color: $colorsecondary;
+
+        &:hover {
+          color: #000;
+        }
+      }
+    }
+  }
+
+  #main-logo_container {
+    display: none;
+
+    &--mobile {
+      margin-top: .25em;
+      opacity: 1;
+    }
+  }
+}

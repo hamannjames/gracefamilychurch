@@ -1,0 +1,39 @@
+#footer {
+
+  &_wrapper {
+
+    background-color: $colorgreydark;
+    padding: 1rem 2rem;
+  }
+
+  &_container {
+
+    max-width: 1160px;
+    margin: 0 auto;
+  }
+
+  &_menu {
+    display: flex;
+    align-items: center;
+    margin-left: -2rem;
+    margin-right: -2rem;
+
+    li {
+      list-style: none;
+      padding: 2rem;
+
+      a {
+        color: #fff;
+        font-size: 16px;
+
+        &:hover {
+          color: $colorsecondary;
+        }
+      }
+
+      img {
+        max-height: 50px;
+      }
+    }
+  }
+}

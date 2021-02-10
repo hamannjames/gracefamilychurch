@@ -17,3 +17,4 @@ wp-content/*
 wp-content/themes/*
 !wp-content/themes/grace_family_theme
 !wp-content/themes/grace_family_theme-child
+!wp-content/themes/grace_family_starter

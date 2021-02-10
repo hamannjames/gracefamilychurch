@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+figure {
+  margin: inherit;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.background-color {
+
+  &--black {
+    background-color: $colorblack;
+  }
+
+  &--darkgrey {
+    background-color: $colorgreydark;
+  }
+
+  &--tertiary {
+    background-color: $colortertiary;
+  }
+}
+
+.width-160--px {
+
+  max-width: 160px;
+  margin: 0 auto;
+}

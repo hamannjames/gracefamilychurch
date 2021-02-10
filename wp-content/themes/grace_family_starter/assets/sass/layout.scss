@@ -1,0 +1,96 @@
+.page-section {
+
+  &_wrapper {
+    width: 100%;
+
+    h1, h2, h3, h4, h5, h6 {
+      margin-bottom: 0;
+    }
+
+    &--bgcolor {
+      padding-top: 4rem;
+
+      .page-section_container {
+
+        & > *:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+
+    &.background-color {
+
+      &--black, &--darkgrey {
+
+        h1, h2, h3, p {
+          color: #fff;
+        }
+      }
+
+      &--tertiary {
+
+        .page-section_container > * {
+          color: $colorblack;
+        }
+      }
+    }
+  }
+
+  &_container {
+    width: 100%;
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 2rem 4rem 2rem;
+
+    & > * {
+      margin-top: 4rem;
+    }
+
+    & > a {
+      display: inline-block;
+    }
+
+    &--min {
+      
+      max-width: 720px;
+    }
+  }
+}
+
+.columns_container {
+  margin-left: -2rem;
+  margin-right: -2rem;
+  display: flex;
+  margin-top: 0;
+
+  @media screen and (max-width: map-get($breakpoints, 'phablet')) {
+    flex-wrap:wrap;
+  }
+
+  p, a, ul, ol {
+    color: inherit;
+  }
+
+  &--2 {
+    
+    &--equal {
+
+      .column {
+        flex-basis: 50%;
+
+        @media screen and (max-width: map-get($breakpoints, 'phablet')) {
+          flex-basis: 100%;
+        }
+      }
+    }
+  }
+}
+
+.column {
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+  & > * {
+    margin-top: 4rem;
+  }
+}

@@ -10,11 +10,17 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: church, blog, modern, hip
 */
 
-#construction {
-  max-width: 700px;
-  margin: 0 auto;
+header {
+	width: 50%;
+	position: relative;
+	padding-top: 30%; 
+	margin: 0 auto;
+	-webkit-filter: drop-shadow(0px 12px 5px rgba(0,0,0,0.3));
+	filter: drop-shadow(0px 12px 5px rgba(0,0,0,0.3));
 }
-
-img {
-  max-width: 100%;
+header svg { 
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
 }

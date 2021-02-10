@@ -1,0 +1,49 @@
+$colorprimary: #be1e2d;
+$colorsecondary: #bf5028;
+$colortertiary: #0bbf9a;
+$colorblack: #231f20;
+$colorgreydark: #59595b;
+$colorgreymedium: #808285;
+$colorgreylight: #a8a9ac;
+$fontprimary: 'Comfortaa', serif;
+$fontsecondary: 'Roboto', sans-serif;
+
+$breakpoints: (
+  "smallest": 320px,
+  "phone": 480px,
+  "phablet": 720px,
+  "tablet": 960px,
+  "desktop": 1200px,
+  "widest": 1440px
+  );
+
+  @function strip-unit($value) {
+    @return $value / ($value * 0 + 1);
+  }
+  
+  @mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+    @if map-has-key($breakpoints, $min-vw) {
+      $min-vw: map-get($breakpoints, $min-vw);
+    }
+
+    @if map-has-key($breakpoints, $max-vw) {
+      $max-vw: map-get($breakpoints, $max-vw);
+    }
+
+    $u1: unit($min-vw);
+    $u2: unit($max-vw);
+    $u3: unit($min-font-size);
+    $u4: unit($max-font-size);
+  
+    @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+      & {
+        font-size: $min-font-size;
+        @media screen and (min-width: $min-vw) {
+          font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+        }
+        @media screen and (min-width: $max-vw) {
+          font-size: $max-font-size;
+        }
+      }
+    }
+  }
