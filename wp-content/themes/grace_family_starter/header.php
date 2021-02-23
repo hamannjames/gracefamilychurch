@@ -74,7 +74,7 @@
         </div>
       </section>
       <ul class="main-nav_container">
-        <li><a href="#meeting-place">About</a></li>
+        <li><a href="/about">About</a></li>
         <li><a href="#ministries">Ministries</a></li>
         <li><a href="#sermons">Sermons</a></li>
         <li><a href="#sermons">Groups</a></li>
