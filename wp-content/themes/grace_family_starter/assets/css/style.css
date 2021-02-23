@@ -813,6 +813,8 @@ body.scrolled #main-logo_container--mobile {
   height: 40vw;
   max-height: 450px;
   position: relative;
+  background-size: cover;
+  background-position: center center;
 }
 .page-hero-title {
   position: absolute;
