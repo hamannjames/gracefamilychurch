@@ -29,6 +29,50 @@
   }
 }
 
+.wp-block-button {
+
+  display: inline-block;
+  border-radius: 5px;
+
+  a {
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 5px;
+    transition: background-color ease .3s, color ease .3s;
+  }
+
+  &.is-style-primary {
+    border: 2px solid $colorprimary;
+
+    a {
+      background-color: $colorprimary;
+      color: #fff;
+      font-size: 2rem;
+
+      &:hover {
+        background-color: #fff;
+        color: $colorprimary;
+      }
+    }
+  }
+
+  &.is-style-secondary {
+    border: 2px solid $colorsecondary;
+
+    a {
+      background-color: $colorsecondary;
+      color: #fff;
+      font-size: 2rem;
+
+      &:hover {
+        background-color: #fff;
+        color: $colorsecondary;
+      }
+    }
+  }
+}
+
 .circle-image {
 
   border-radius: 50%;
@@ -53,3 +97,4 @@
     padding-bottom: 56.25%;
   }
 }
+

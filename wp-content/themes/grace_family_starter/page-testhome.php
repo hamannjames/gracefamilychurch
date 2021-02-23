@@ -1,84 +1,4 @@
-<?php ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Grace Family Church of Everett</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="<?php echo(get_template_directory_uri() . '/assets/css/style.css'); ?>">
-  <script>
-    const throttle = (func, limit, immediate) => {
-      let inThrottle
-      return function() {
-        const args = arguments
-        const context = this
-        if (immediate) {
-          func.apply(context, args);
-        }
-        immediate = false;
-        if (!inThrottle) {
-          func.apply(context, args)
-          inThrottle = true
-          setTimeout(() => inThrottle = false, limit)
-        }
-      }
-    }
-
-    const debounce = (func, delay, immediate = false) => {
-      let inDebounce
-      let wantsImmediate = immediate;
-      return function() {
-        const context = this
-        const args = arguments
-        if (immediate) {
-          func.apply(context, args);
-        }
-        immediate = false;
-        clearTimeout(inDebounce)
-        inDebounce = setTimeout(() => {
-          func.apply(context, args);
-          if (wantsImmediate) {
-            immediate = true;
-          }
-        }, delay)
-      }
-    }
-  </script>
-</head>
-<body class="home">
-  <header>
-    <nav class="main-nav_wrapper">
-      <ul class="main-nav_container">
-        <li><a href="#meeting-place">Meeting Place</a></li>
-        <li><a href="#sermons">Sermons</a></li>
-        <li id="main-logo_wrapper" role="banner">
-          <figure id="main-logo_container">
-            <img src="https://gracefamilychurcheverett.com/wp-content/uploads/2021/02/GFC-Logo-FINAL-04_crop.png">
-          </figure>
-
-          <figure id="main-logo_container--mobile">
-            <img src="https://gracefamilychurcheverett.com/wp-content/uploads/2021/02/GFC-Logo-FINAL-05_crop.png">
-          </figure>
-        </li>
-        <li>
-          <a href="#contact">Contact Us</a>
-        </li>
-        <li id="nav-email">
-          <a href="#give">Give</a>
-        </li>
-      </ul>
-    </nav>
-    <script>
-      window.addEventListener('scroll', debounce(function(){
-        if (window.pageYOffset > 0) {
-          document.body.classList.add('scrolled')
-        }
-        else {  
-          document.body.classList.remove('scrolled');
-        }
-      }, 100, true));
-    </script>
-  </header>
+<?php get_template_part('header'); ?>
 
   <section class="hero">
     <h1 class="hero-title">We are building a place to belong in Everett</h1>
@@ -90,7 +10,7 @@
           </figure>
           <div class="hero-slider_content">
             <p>
-              A place of worship
+              A place of grace
             </p>
           </div>
         </div>
@@ -120,7 +40,7 @@
       const data = [
         {
           src: 'https://gracefamilychurcheverett.com/wp-content/uploads/2021/02/GFC-Logo-FINAL-04_crop.png',
-          text: 'A place of worship'
+          text: 'A place of grace'
         },
         {
           src: 'https://gracefamilychurcheverett.com/wp-content/uploads/2021/02/jack-sharp-OptEsFuZwoQ-unsplash.jpg',
@@ -128,7 +48,7 @@
         },
         {
           src: 'https://gracefamilychurcheverett.com/wp-content/uploads/2021/02/amaury-gutierrez-rzmQOng8h8I-unsplash.jpg',
-          text: 'A place of grace',
+          text: 'A place of worship',
         }
       ]
 
@@ -158,36 +78,70 @@
 
       insertData(data[1], slider.children[1]);
       insertData(data[2], slider.children[2]);
-
-      /*
-      setInterval(function(){
-        changeClass();
-        setTimeout(function(){
-          swapChildren();
-        }, 1000);
-      }, 4000);
-      */
+      
+      // setInterval(function(){
+      //   changeClass();
+      //   setTimeout(function(){
+      //     swapChildren();
+      //   }, 1000);
+      // }, 4000);
       
     })
   </script>
   <article class="page-content_wrapper">
+    <section class="page-section_wrapper page-section_wrapper--bgcolor background-color--darkgrey page-section_wrapper--bgimage" style="background-image: url('https://gracefamilychurcheverett.com/wp-content/uploads/2021/02/spacex-uj3hvdfQujI-unsplash-1-1.jpg');">
+      <div class="page-section_overlay background-color--mediumgreytlight"></div>
+      <div class="page-section_container">
+        <div class="columns_container columns_container--2--equal align-center">
+          <div class="column">
+            <h2 class="page-section_title text-left" id="meeting-place">Launching March 7th<br>Sundays at 4:00pm</h2>
+            <p>
+              Meeting at
+              Everett Lowell Foursquare
+            </p>
+            <p>
+              5218 S 2nd Ave, Everett, WA 98203
+            </p>
+          </div>
+          <div class="column">
+            <figure class="text-center">
+              <img src="https://gracefamilychurcheverett.com/wp-content/uploads/2021/02/GFC-Logo-FINAL-02_crop.png" style="max-width: 350px;">
+            </figure>
+          </div>
+        </div>
+
+        <h3 class="text-center">Stay Connected</h3>
+
+        <p class="text-center">
+          Stay connected with Grace Family News by following us on Facebook
+        </p>
+
+        <div class="button_wrapper text-center">
+          <div class="button_container button_container--color-primary">
+            <a href="https://www.facebook.com/gracefamilychurcheverett/">Grace Family Facebook</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="page-section_wrapper">
       <div class="page-section_container page-section_container--min">
-        <h2 class="page-section_title" id="meeting-place">New building and meeting time!</h2>
-        <p>
-          We are so excited for this next season. Starting on March 7th, we will be meeting on Sundays at 4:00 PM:
-        </p>
-        <p class="text-center">
-          Foursquare Lowell<br>
-          5218 S 2nd Ave.<br>
-          Everett, WA 98203 
-        </p>
-        <div>
-          <a href="https://www.google.com/maps/place/5218+S+2nd+Ave,+Everett,+WA+98203/@47.9494214,-122.1953383,18.23z/data=!4m13!1m7!3m6!1s0x5490009c0c8bffff:0x2cf1b800cf1dacf5!2s5218+S+2nd+Ave,+Everett,+WA+98203!3b1!8m2!3d47.9495403!4d-122.1949011!3m4!1s0x5490009c0c8bffff:0x2cf1b800cf1dacf5!8m2!3d47.9495403!4d-122.1949011" target="_blank">
-            <figure class="text-center">
-              <img src="https://gracefamilychurcheverett.com/wp-content/uploads/2021/02/Screen-Shot-2021-02-09-at-3.06.28-PM-2.png" alt="Google map showing Fourswuare Lowell">
+        <h2 class="page-section_title" id="ministries">Ministries</h2>
+        <div class="columns_container columns_container--2--equal align-center">
+          <div class="column">
+            <p>
+              Meeting at<br>
+              Everett Lowell Foursquare
+            </p>
+            <p>
+              5218 S 2nd Ave, Everett, WA 98203
+            </p>
+          </div>
+          <div class="column">
+            <figure>
+              <img src="https://gracefamilychurcheverett.com/wp-content/uploads/2021/02/GFC-Logo-FINAL-02_crop.png">
             </figure>
-          </a>
+          </div>
         </div>
       </div>
     </section>
@@ -277,53 +231,4 @@
     </section>
   </article>
 
-  <footer id="footer_wrapper">
-    <div id="footer_container">
-      <ul id="footer_menu">
-        <li>
-          <a href="mailto:info@gracefamilychurcheverett.com">info@gracefamilychurcheverett.com</a>
-        </li>
-        <li>
-          <a href="https://www.facebook.com/gracefamilychurcheverett/">
-            <figure>
-              <img src="https://gracefamilychurcheverett.com/wp-content/uploads/2021/02/f_logo_RGB-Blue_58.png" alt="Facebook logo">
-            </figure>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </footer>
-  <script>
-    window.addEventListener('load', function(){
-      document.querySelectorAll('.main-nav_container a').forEach(function(el){
-        let node = document.querySelector(el.getAttribute('href'));
-        let offset = (node.getBoundingClientRect().top  + window.pageYOffset - 60).toFixed();
-
-        function changeFocusAfterScroll() {
-          if (window.pageYOffset == offset || window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-            node.focus();
-            window.removeEventListener('scroll', changeFocusAfterScroll);
-          }
-        }
-
-        if (!node.getAttribute('tabindex')) {
-          node.setAttribute('tabindex', -1);
-        }
-
-        el.addEventListener('click', function(e){
-          e.preventDefault();
-          if (offset >= document.body.offsetHeight - window.innerHeight && window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-            node.focus();
-            return;
-          }
-          window.addEventListener('scroll', changeFocusAfterScroll);
-          window.scroll({
-            top: offset,
-            behavior: 'smooth'
-          });
-        })
-      })
-    })
-  </script>
-</body>
-</html>
+  <?php get_template_part('footer'); ?>

@@ -1,0 +1,30 @@
+.has {
+
+  &-dark-grey-background-color {
+    background-color: $colorgreydark;
+  }
+
+  &-black-background-color {
+    background-color: $colorblack;
+  }
+
+  &-medium-grey-background-color {
+    background-color: $colorgreymedium;
+  }
+
+  &-light-grey-background-color {
+    background-color: $colorgreylight;
+  }
+
+  &-primary-background-color {
+    background-color: $colorprimary;
+  }
+
+  &-secondary-background-color {
+    background-color: $colorsecondary;
+  }
+
+  &-tertiary-background-color {
+    background-color: $colortertiary;
+  }
+}

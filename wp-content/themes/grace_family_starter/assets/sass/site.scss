@@ -15,8 +15,15 @@ figure {
   margin: inherit;
 }
 
-.text-center {
-  text-align: center;
+.text {
+
+  &-center {
+    text-align: center;
+  }
+
+  &-left {
+    text-align: left;
+  }
 }
 
 .background-color {
@@ -27,6 +34,18 @@ figure {
 
   &--darkgrey {
     background-color: $colorgreydark;
+  }
+
+  &--darkgreyt {
+    background-color: $colorgreydarkt;
+  }
+
+  &--mediumgreyt {
+    background-color: $colorgreymediumt;
+  }
+
+  &--mediumgreytlight {
+    background-color: $colorgreymediumtlight;
   }
 
   &--tertiary {

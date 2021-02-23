@@ -4,7 +4,7 @@ html {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $fontprimary;
-  color: $colorsecondary;
+  color: $colorprimary;
 }
 
 h1 {
@@ -41,4 +41,8 @@ a {
 
 .page-section_title {
   text-align: center;
+}
+
+.has-white-color {
+  color: #fff;
 }

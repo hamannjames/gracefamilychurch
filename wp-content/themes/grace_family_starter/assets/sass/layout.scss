@@ -2,12 +2,13 @@
 
   &_wrapper {
     width: 100%;
+    position: relative;
 
     h1, h2, h3, h4, h5, h6 {
       margin-bottom: 0;
     }
 
-    &--bgcolor {
+    &--bgcolor, &.has-background {
       padding-top: 4rem;
 
       .page-section_container {
@@ -34,6 +35,32 @@
         }
       }
     }
+
+    &.page-section_wrapper--bgimage {
+      background-size: cover;
+      background-position: center center;
+
+      h1, h2, h3, h4, h5, h6, p {
+        text-shadow: 1px 1px 1px #333;
+      }
+    }
+
+    &.page-section_wrapper--bgcolor, &.page-section_wrapper--bgimage, &.has-background {
+
+      & > .page-section_container {
+
+        & > .columns_container:first-child, & > .wp-block-columns:first-child {
+
+          & > .column, & > .wp-block-column {
+
+            & > *:first-child {
+
+              margin-top: 0;
+            }
+          }
+        }
+      }
+    }
   }
 
   &_container {
@@ -44,6 +71,7 @@
 
     & > * {
       margin-top: 4rem;
+      margin-bottom: 0;
     }
 
     & > a {
@@ -55,9 +83,25 @@
       max-width: 720px;
     }
   }
+
+  &_overlay {
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+
+    & + .page-section_container {
+
+      > * {
+        position:relative;
+      }
+    }
+  }
 }
 
-.columns_container {
+.columns_container, .wp-block-columns {
   margin-left: -2rem;
   margin-right: -2rem;
   display: flex;
@@ -67,15 +111,11 @@
     flex-wrap:wrap;
   }
 
-  p, a, ul, ol {
-    color: inherit;
-  }
-
   &--2 {
     
     &--equal {
 
-      .column {
+      .column, .wp-block-column {
         flex-basis: 50%;
 
         @media screen and (max-width: map-get($breakpoints, 'phablet')) {
@@ -86,11 +126,17 @@
   }
 }
 
-.column {
+.wp-block-column {
+  flex-grow: 1;
+  flex-basis: 100%;
   padding-left: 2rem;
   padding-right: 2rem;
+}
 
-  & > * {
+.wp-block-column {
+
+  > * {
     margin-top: 4rem;
+    margin-bottom: 0;
   }
 }

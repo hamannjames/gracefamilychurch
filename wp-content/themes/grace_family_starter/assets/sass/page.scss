@@ -1,0 +1,31 @@
+.page {
+
+  &-hero {
+    width: 100%;
+    height: 40vw;
+    max-height: 450px;
+    position: relative;
+
+    &-title {
+      position: absolute;
+      left: 50%;
+      bottom: 5%;
+      transform: translateX(-50%) skewX(-30deg);
+      width: auto;
+      max-width: 90%;
+      margin: 10px 0 3% 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 1px 1px 20px 1px #000;
+      background-color: #fff;
+
+      h1 {
+        color: $colorprimary;
+        transform: skewX(30deg);
+        margin: 0;
+        padding: 2rem;
+      }
+    }
+  }
+}
