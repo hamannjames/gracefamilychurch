@@ -1,7 +1,7 @@
 <?php ?>
 <footer id="footer_wrapper" style="background-image: url('https://gracefamilychurcheverett.com/wp-content/uploads/2021/02/gift-habeshaw-QDP10NbwcyE-unsplash-scaled.jpg');">
   <?php
-  $footer_post = get_post(142);
+  $footer_post = get_post(47);
   echo apply_filters('the_content', $footer_post->post_content);
   ?>
 <!--
