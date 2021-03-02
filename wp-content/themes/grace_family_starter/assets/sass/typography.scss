@@ -15,7 +15,7 @@ h2 {
   @include fluid-type('phone', 'desktop', 22px, 35px);
 }
 
-h3 {
+h3, .wpforms-title {
   @include fluid-type('phone', 'desktop', 20px, 30px);
 }
 
@@ -23,7 +23,7 @@ h4 {
   @include fluid-type('phone', 'desktop', 18px, 25px);
 }
 
-p, ul, ol, a {
+p, ul, ol, a, button, input, textarea, label, select {
   font-family: $fontsecondary;
   color: $colorblack;
   @include fluid-type('phone', 'desktop', 16px, 20px);
@@ -45,4 +45,29 @@ a {
 
 .has-white-color {
   color: #fff;
+}
+
+
+.is-style {
+
+  &-has-shadow {
+
+    &--grey {
+      text-shadow: 1px 1px 1px #333;
+    }
+  }
+}
+
+.wpforms-title {
+  font-family: $fontprimary;
+  color: inherit;
+}
+
+.wpforms-field-description {
+  font-family: $fontsecondary;
+  font-size: 16px;
+}
+
+.wpforms-form button[type=submit] {
+  font-size: 18px !important;
 }

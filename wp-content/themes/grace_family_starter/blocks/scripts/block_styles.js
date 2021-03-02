@@ -1,7 +1,11 @@
 wp.blocks.registerBlockStyle('core/heading', {
-  name: 'page-section_title',
-  label: 'Page Section Title',
-  isDefault: true
+  name: 'has-shadow--grey',
+  label: 'Text Shadow (Grey)'
+});
+
+wp.blocks.registerBlockStyle('core/paragraph', {
+  name: 'has-shadow--grey',
+  label: 'Text Shadow (Grey)'
 });
 
 const buttonBlockStyles = [
@@ -12,8 +16,7 @@ const buttonBlockStyles = [
   },
   {
     name: 'secondary',
-    label: 'Secondary Color',
-    isDefault: true
+    label: 'Secondary Color'
   },
   {
     name: 'tertiary',

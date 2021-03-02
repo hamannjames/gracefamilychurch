@@ -1,5 +1,35 @@
 <?php
 
+add_theme_support('post-thumbnails');
+add_theme_support('menus');
+
+include_once('includes/cpt.php');
+
+function menu_spacer($menu, $args){
+	if ($args->menu === "Main Menu" && $args->container_class === 'main-nav_wrapper') {
+		$top_level_indexes = array_values(array_filter($menu, function($item){
+			return $item->menu_item_parent == 0;
+		}));
+	
+		$half = floor(count($top_level_indexes) / 2) - 1;
+		$isOdd = count($top_level_indexes) & 1;
+	
+		foreach($top_level_indexes as $index=>$item) {
+			$classString = $index <= $half ? 'left-side' : 'right-side';
+			$classString .= $isOdd ? " {$classString}--odd" : " {$classString}--even";
+	
+			if ($index == $half) $classString .= " push-left";
+			if ($index == $half + 1) $classString .= " push-right";
+	
+			$item->classes[] = $classString;
+		}
+	}
+
+	return $menu;
+}
+
+add_filter('wp_nav_menu_objects', 'menu_spacer', 10, 2);
+
 function grace_family_autoloader ($class_name) {
   if (0 !== strpos($class_name, 'GF')) {
     return;

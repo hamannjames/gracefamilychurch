@@ -7,13 +7,17 @@ $min = get_field('min');
 $class_string = (isset($block['className']) ? $block['className'] : '') . ' page-section_wrapper';
 $style_string = '';
 
+if ($bg_image || isset($block['backgroundColor'])) {
+  $class_string .= ' has-background';
+};
+
 if ($bg_image) {
   $class_string .= ' page-section_wrapper--bgimage';
   $style_string .= "background-image: url({$bg_image});";
 }
 
 if (isset($block['backgroundColor'])) {
-  $class_string .= " has-background has-{$block['backgroundColor']}-color has-{$block['backgroundColor']}-background-color";
+  $class_string .= " has-{$block['backgroundColor']}-color has-{$block['backgroundColor']}-background-color";
 };
 
 if (isset($block['textColor'])) {

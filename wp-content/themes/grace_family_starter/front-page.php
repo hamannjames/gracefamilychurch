@@ -1,18 +1,13 @@
 <?php get_template_part('header'); ?>
 
   <section class="hero">
-    <h1 class="hero-title">We are building a place to belong in Everett</h1>
+    <h1 class="hero-title">At Grace Family Church we believe that we are outrageously loved by God</h1>
     <div class="hero-slider_wrapper">
       <div class="hero-slider_container">
         <div class="hero-slider_slide" style="transform: translateX(0)" data-slide='1'>
           <figure class="hero-slider_image">
-            <img src="https://gracefamilychurcheverett.com/wp-content/uploads/2021/02/edwin-andrade-6liebVeAfrY-unsplash.jpg">
+            <img src="https://gracefamilychurcheverett.com/wp-content/uploads/2021/02/bantersnaps-REyoFHP9pw8-unsplash-scaled.jpg">
           </figure>
-          <div class="hero-slider_content">
-            <p>
-              A place of grace
-            </p>
-          </div>
         </div>
 
         <div class="hero-slider_slide" style="transform: translateX(100%)" data-slide='2'>

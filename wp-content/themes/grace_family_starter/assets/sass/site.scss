@@ -58,3 +58,37 @@ figure {
   max-width: 160px;
   margin: 0 auto;
 }
+
+.push-left {
+  margin-right: 4rem;
+}
+
+.push-right {
+  margin-left: 4rem;
+}
+
+.wp-block-image {
+
+  img {
+    height: auto;
+  }
+}
+
+figure {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.wp-block-embed {
+
+  &.aligncenter {
+    text-align: center;
+
+    &.is-type-video {
+
+      iframe {
+        box-shadow: 5px 5px 10px #444;
+      }
+    }
+  }
+}

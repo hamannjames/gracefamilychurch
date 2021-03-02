@@ -31,5 +31,32 @@ function acf_init_blocks() {
       ),
       'render_template' => __DIR__ . '/templates/page-section.php'
     ));
+
+    acf_register_block_type(array(
+      'name' => 'latest-posts_post-type',
+      'title' => 'Latest Posts by Post Type',
+      'description' => 'Display latest posts by post type',
+      'category' => 'widgets',
+      'supports' => array(
+        'mode' => true,
+        'class' => true
+      ),
+      'render_template' => __DIR__ . '/templates/latest-posts-post-type.php'
+    ));
+
+    acf_register_block_type(array(
+      'name' => 'basic-modal',
+      'title' => 'Basic Modal',
+      'description' => 'Put content in a basic modal with button to show',
+      'category' => 'widgets',
+      'supports' => array(
+        'mode' => true,
+        'class' => true,
+        'color' => true,
+        'align' => true,
+        'jsx' => true
+      ),
+      'render_template' => __DIR__ . '/templates/basic-modal.php'
+    ));
   }
 }

@@ -1,0 +1,85 @@
+{
+    "key": "group_603c2690ae040",
+    "title": "Widget - Latest Posts by Post Type",
+    "fields": [
+        {
+            "key": "field_603c26a534b59",
+            "label": "Post Type",
+            "name": "post_type",
+            "type": "text",
+            "instructions": "Post type to use for query",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "post",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_603c27ba34b5a",
+            "label": "Number of posts",
+            "name": "number_of_posts",
+            "type": "number",
+            "instructions": "Number of posts to show (leave -1 for all posts)",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": -1,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_603c29f676824",
+            "label": "Posts Per Row",
+            "name": "posts_per_row",
+            "type": "number",
+            "instructions": "Number of posts to display each row. Default support up to 5 per row. Beyond that, use custom css.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 3,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/latest-posts-post-type"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1614555906
+}
