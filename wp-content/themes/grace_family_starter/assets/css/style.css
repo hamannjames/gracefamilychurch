@@ -1261,6 +1261,17 @@ body.scrolled #back-to-top {
   height: 50px;
 }
 
+#footer-contact .wp-block-group__inner-container {
+  width: 100%;
+  display: flex;
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+#footer-contact .wp-block-group__inner-container > * {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .has-dark-grey-background-color {
   background-color: #59595b;
 }
