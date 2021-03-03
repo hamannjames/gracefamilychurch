@@ -89,6 +89,7 @@ body.scrolled {
     display: flex;
     margin-left: -1rem;
     margin-right: -1rem;
+    justify-content: center;
 
     & > * {
       padding-left: 1rem;
