@@ -10,9 +10,13 @@
   window.addEventListener('load', function(){
 
     document.querySelectorAll('a[href*="#"]').forEach(function(el){
+      console.log(el.getAttribute('href'));
       if (el.getAttribute('href').charAt(0) === '#') {
         if (el.getAttribute('href') === '#contact') {
-          document.getElementById('block_603ed575d7b16--modal').classList.add('show');
+          el.AddEventListener('click', function(e){
+            e.preventDefault();
+            document.getElementById('block_603ed575d7b16--modal').classList.add('show');
+          })
           return;
         }
         let node = document.querySelector(el.getAttribute('href'));
