@@ -1285,10 +1285,12 @@ body.scrolled #back-to-top {
   margin-left: -1rem;
   margin-right: -1rem;
   justify-content: center;
+  flex-wrap: wrap;
 }
 #footer-contact .wp-block-group__inner-container > * {
   padding-left: 1rem;
   padding-right: 1rem;
+  margin-top: 1rem;
 }
 
 .has-dark-grey-background-color {
