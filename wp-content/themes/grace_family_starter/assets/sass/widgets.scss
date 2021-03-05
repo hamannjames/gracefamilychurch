@@ -260,5 +260,16 @@
 
   &_close {
     margin-bottom: 4rem;
+    font-family: $fontprimary;
+    background-color: $colorsecondary;
+    border: none;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px #999;
+    transition: box-shadow ease .3s;
+
+    &:hover {
+      box-shadow: 3px 3px 5px #999;
+    }
   }
 }
