@@ -795,24 +795,27 @@ body.scrolled .sub-menu {
   height: 60vw;
   max-height: 650px;
   position: relative;
+  background-size: cover;
+  background-position: center center;
+  padding: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .hero-title {
-  position: absolute;
-  top: 50%;
   max-width: 1160px;
-  left: 50%;
-  transform: translateX(-50%);
   width: 100%;
   text-align: center;
+  position: relative;
+  top: 7rem;
   padding: 0 2rem;
-  z-index: 999;
   font-weight: bold;
   color: #fff;
   text-shadow: 2px 2px 2px #333;
 }
 @media screen and (max-width: 480px) {
   .hero-title {
-    top: 35%;
+    top: 5.5rem;
   }
 }
 .hero-slider_wrapper {
@@ -985,6 +988,11 @@ body.scrolled .sub-menu {
   background-size: cover;
   background-position: center center;
   background-color: #808285;
+}
+@media screen and (max-width: 480px) {
+  .page-hero {
+    height: 55vw;
+  }
 }
 .page-hero-title {
   position: absolute;

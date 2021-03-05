@@ -9,6 +9,10 @@
     background-position: center center;
     background-color: $colorgreymedium;
 
+    @media screen and (max-width: map-get($breakpoints, 'phone')) {
+      height: 55vw;
+    }
+
     &-title {
       position: absolute;
       left: 50%;

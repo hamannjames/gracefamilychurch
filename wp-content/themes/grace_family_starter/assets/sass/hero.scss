@@ -3,23 +3,25 @@
   height: 60vw;
   max-height: 650px;
   position: relative;
+  background-size: cover;
+  background-position: center center;
+  padding:1px;
+  display:flex;
+  align-items:center;
+  justify-content: center;
 
   &-title {
-    position: absolute;
-    top: 50%;
     max-width: 1160px;
-    left: 50%;
-    transform: translateX(-50%);
     width:100%;
     text-align: center;
+    position: relative;
+    top: 7rem;
     padding: 0 2rem;
-    z-index: 999;
     font-weight: bold;
     color: #fff;
     text-shadow: 2px 2px 2px #333;
-
     @media screen and (max-width: map-get($breakpoints, 'phone')) {
-      top: 35%;
+      top: 5.5rem;
     }
   }
 
