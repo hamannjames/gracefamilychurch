@@ -44,6 +44,12 @@
   }
 }
 
+#live-countdown_seconds, #live-countdown_minutes--comma {
+  @media screen and (max-width: map-get($breakpoints, 'phone')) {
+    display: none;
+  }
+}
+
 .main-nav_container {
   display: flex;
   align-items:top;
@@ -220,6 +226,12 @@
       .live-countdown {
         font-weight: normal;
         color: #fff;
+
+        &_seconds {
+          @media screen and (max-width: map-get($breakpoints, 'phone')) {
+            display: none;
+          }
+        }
       }
     }
   }

@@ -562,6 +562,12 @@ figure {
   transform: translate(0);
 }
 
+@media screen and (max-width: 480px) {
+  #live-countdown_seconds, #live-countdown_minutes--comma {
+    display: none;
+  }
+}
+
 .main-nav_container {
   display: flex;
   align-items: top;
@@ -698,6 +704,11 @@ figure {
 #main-nav_toolbar_heading .live-countdown {
   font-weight: normal;
   color: #fff;
+}
+@media screen and (max-width: 480px) {
+  #main-nav_toolbar_heading .live-countdown_seconds {
+    display: none;
+  }
 }
 #main-nav_aux--mobile {
   display: flex;

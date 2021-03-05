@@ -58,8 +58,8 @@
               Live in: <span id="live-countdown" class="live-countdown">
                 <span id="live-countdown_days" class="live-countdown"></span> days,&nbsp;
                 <span id="live-countdown_hours" class="live-countdown"></span> hours,&nbsp;
-                <span id="live-countdown_minutes" class="live-countdown"></span> minutes,&nbsp;
-                <span id="live-countdown_seconds" class="live-countdown"></span> seconds
+                <span id="live-countdown_minutes" class="live-countdown"></span> minutes<span id="live-countdown_minutes--comma">,&nbsp;</span>
+                <span id="live-countdown_seconds" class="live-countdown"></span> <span class="live-countdown_seconds">seconds</span>
               </span>
             </h2>
           </li>
