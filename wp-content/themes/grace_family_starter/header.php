@@ -77,14 +77,14 @@
       <div id="main-logo_wrapper">
         <figure id="main-logo_container">
           <a href="/">  
-            <img id="main-logo_image" src="https://gracefamilychurcheverett.com/wp-content/uploads/2021/02/GFC-Logo-FINAL-04_crop.png" alt="Grace Family Church Logo">
+            <img id="main-logo_image" src="https://gracefamilychurcheverett.com/wp-content/uploads/2021/03/GFC-Logo-FINAL-04_crop.png" alt="Grace Family Church Logo">
           </a>
         </figure>
       </div>
       <div id="main-logo_wrapper--mobile" role="banner">
         <figure id="main-logo_container--mobile">
           <a href="/">  
-            <img id="main-logo_image--mobile" src="https://gracefamilychurcheverett.com/wp-content/uploads/2021/02/GFC-Logo-FINAL-05-1.jpg" alt="Grace Family Church Logo">
+            <img id="main-logo_image--mobile" src="https://gracefamilychurcheverett.com/wp-content/uploads/2021/03/GFC-Logo-FINAL-05.jpg" alt="Grace Family Church Logo">
           </a>
         </figure>
       </div>
