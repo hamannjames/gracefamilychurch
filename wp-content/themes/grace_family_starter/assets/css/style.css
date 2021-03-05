@@ -1183,7 +1183,7 @@ body.scrolled .sub-menu {
   overflow-Y: scroll;
   align-items: center;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: #fff;
 }
 .basic-modal_wrapper.save.show {
   transform: translateX(0);
