@@ -13,7 +13,7 @@
       console.log(el.getAttribute('href'));
       if (el.getAttribute('href').charAt(0) === '#') {
         if (el.getAttribute('href') === '#contact') {
-          el.AddEventListener('click', function(e){
+          el.addEventListener('click', function(e){
             e.preventDefault();
             document.getElementById('block_603ed575d7b16--modal').classList.add('show');
           })
