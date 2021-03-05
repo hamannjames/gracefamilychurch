@@ -768,6 +768,11 @@ body.scrolled .main-nav_wrapper {
   padding: 5px 0;
   box-shadow: 1px 1px 1px #ebebeb;
 }
+body.scrolled .main-nav_wrapper .sub-menu {
+  background-color: #fff;
+  padding: 1rem;
+  box-shadow: 1px 1px 1px #333;
+}
 body.scrolled .main-nav_container li a {
   color: #be1e2d;
 }
@@ -783,11 +788,6 @@ body.scrolled #main-logo_wrapper--mobile {
 body.scrolled .menu-item-has-children:hover > a {
   text-decoration: underline;
   color: #be1e2d;
-}
-body.scrolled .sub-menu {
-  background-color: #fff;
-  padding: 1rem;
-  box-shadow: 1px 1px 1px #333;
 }
 
 .hero {

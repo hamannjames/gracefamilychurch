@@ -306,6 +306,12 @@ body.scrolled {
     background-color: #fff;
     padding: 5px 0;
     box-shadow: 1px 1px 1px #ebebeb;
+
+    .sub-menu {
+      background-color: #fff;
+      padding: 1rem;
+      box-shadow: 1px 1px 1px #333;
+  }
   }
 
   .main-nav_container {
@@ -339,11 +345,5 @@ body.scrolled {
         color: $colorprimary;
       }
     }
-  }
-
-  .sub-menu {
-    background-color: #fff;
-    padding: 1rem;
-    box-shadow: 1px 1px 1px #333;
   }
 }
