@@ -98,7 +98,7 @@
 
       <div id="main-nav_aux--mobile">
         <div id="main-nav_give--wrapper">
-          <a id="main-nav_give">Give</a>
+          <a id="main-nav_give" href="/give">Give</a>
         </div>
         <button id="main-nav_toggle">Menu</button>
       </div>
