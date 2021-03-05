@@ -3,7 +3,7 @@
 $button_style = get_field('button_style');
 $button_text = get_field('button_text');
 
-$class_string = (isset($block['className']) ? $block['className'] . ' ' : '') . 'basic-modal_container';
+$class_string = (isset($block['className']) ? $block['className'] . ' ' : '');
 $style_string = '';
 
 if( !empty($block['align']) ) {
@@ -32,9 +32,11 @@ if (isset($block['style']) && isset($block['style']['color'])) {
 ?>
 
 <section class="basic-modal_wrapper <?php echo !$is_preview ? 'save' : 'edit'; ?>" id="<?php echo $block['id'] . '--modal'; ?>">
-  <div class="<?php echo $class_string ?>" style="<?php echo $style_string; ?>">
-    <button class="basic-modal_close" id="<?php echo $block['id'] . '--close'; ?>">Close</button>
-    <InnerBlocks />
+  <div class="basic-modal_container" style="<?php echo $style_string; ?>">
+    <div class="basic-modal_content <?php echo $class_string ?>" style="<?php echo $style_string; ?>">
+      <button class="basic-modal_close" id="<?php echo $block['id'] . '--close'; ?>">Close</button>
+      <InnerBlocks />
+    </div>
   </div>
 </section>
 

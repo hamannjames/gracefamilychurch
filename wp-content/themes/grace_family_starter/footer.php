@@ -11,6 +11,10 @@
 
     document.querySelectorAll('a[href*="#"]').forEach(function(el){
       if (el.getAttribute('href').charAt(0) === '#') {
+        if (el.getAttribute('href') === '#contact') {
+          document.getElementById('block_603ed575d7b16--modal').classList.add('show');
+          return;
+        }
         let node = document.querySelector(el.getAttribute('href'));
         let offset = (node.getBoundingClientRect().top  + window.pageYOffset - 60).toFixed();
 
