@@ -199,6 +199,9 @@
               }
               else {
                 changeObject.seconds = null;
+                countdown.innerHTML = '<a href="https://gracefamily.online.church/"><strong>We are live!</strong></a>';
+                removeInterval(adjustSeconds);
+                return;
               }
             }
             adjustDisplay();
