@@ -56,10 +56,10 @@
           <li>
             <h2 id="main-nav_toolbar_heading">
               Live in: <span id="live-countdown" class="live-countdown">
-                <span id="live-countdown_days" class="live-countdown"></span> days,&nbsp;
-                <span id="live-countdown_hours" class="live-countdown"></span> hours,&nbsp;
-                <span id="live-countdown_minutes" class="live-countdown"></span> minutes<span id="live-countdown_minutes--comma">,&nbsp;</span>
-                <span id="live-countdown_seconds" class="live-countdown"></span> <span class="live-countdown_seconds">seconds</span>
+                <span id="live-countdown_days--container"><span id="live-countdown_days" class="live-countdown"></span> day(s),&nbsp;</span>
+                <span id="live-countdown_hours--container"><span id="live-countdown_hours" class="live-countdown"></span> hour(s),&nbsp;</span>
+                <span id="live-countdown_minutes--container"><span id="live-countdown_minutes" class="live-countdown"></span> minute(s)<span id="live-countdown_minutes--comma">,&nbsp;</span></span>
+                <span id="live-countdown_seconds--container"><span id="live-countdown_seconds" class="live-countdown"></span> <span class="live-countdown_seconds">second(s)</span></span>
               </span>
             </h2>
           </li>
@@ -124,7 +124,7 @@
 
         window.addEventListener('load', function(){
           const countdown = document.getElementById('live-countdown');
-          const theDate = new Date("March 7, 2021 16:30:00");
+          const theDate = new Date("March 7, 2021 16:00:00");
           const timeTill = theDate - Date.now();
           if (timeTill < 1) {
             return;
@@ -137,27 +137,52 @@
           const timeObject = {
             days: {
               time: null,
-              display:countdown.querySelector('#live-countdown_days')
+              display: countdown.querySelector('#live-countdown_days'),
+              container: countdown.querySelector('#live-countdown_days--container')
             },
             hours: {
               time: null,
-              display:countdown.querySelector('#live-countdown_hours')
+              display: countdown.querySelector('#live-countdown_hours'),
+              container: countdown.querySelector('#live-countdown_hours--container')
             },
             minutes: {
               time: null,
-              display:countdown.querySelector('#live-countdown_minutes')
+              display: countdown.querySelector('#live-countdown_minutes'),
+              container: countdown.querySelector('#live-countdown_minutes--container')
             },
             seconds: {
               time: null,
-              display: countdown.querySelector('#live-countdown_seconds')
+              display: countdown.querySelector('#live-countdown_seconds'),
+              container: countdown.querySelector('#live-countdown_seconds--container')
             }
           }
 
           const changeObject = {
-            days: Math.floor(daysTill),
-            hours: Math.floor(hoursTill),
-            minutes: Math.floor(minutesTill),
-            seconds: Math.floor(secondsTill)
+            days: Math.max(Math.floor(daysTill), 0),
+            hours: Math.max(Math.floor(hoursTill), 0),
+            minutes: Math.max(Math.floor(minutesTill), 0),
+            seconds: Math.max(Math.floor(secondsTill), 0)
+          }
+
+          if (changeObject.days <= 0) {
+            changeObject.days = null;
+          }
+
+          if (changeObject.hours <= 0 && changeObject.days === null) {
+            changeObject.hours = null;
+          }
+
+          if (changeObject.minutes <= 0 && changeObject.hours === null) {
+            changeObject.minutes = null;
+          }
+
+          if (changeObject.seconds <= 0 && changeObject.minutes === null) {
+            changeObject.seconds = null;
+          }
+
+          if (changeObject.seconds === null) {
+            countdown.innerHTML = '<a href="https://gracefamily.online.church/"><strong>We are live!</strong></a>';
+            return;
           }
 
           function adjustSeconds() {
@@ -167,10 +192,14 @@
             }
 
             changeObject.seconds -= 1;
-
             if (changeObject.seconds == -1) {
-              changeObject.seconds = 59;
-              adjustMinutes();
+              if (changeObject.minutes !== null) {
+                changeObject.seconds = 59;
+                adjustMinutes();
+              }
+              else {
+                changeObject.seconds = null;
+              }
             }
             adjustDisplay();
           }
@@ -178,26 +207,42 @@
           function adjustMinutes() {
             changeObject.minutes -= 1;
             if (changeObject.minutes === -1) {
-              changeObject.minutes = 59;
-              adjustHours();
+              if (changeObject.hours !== null) {
+                changeObject.minutes = 59;
+                adjustHours();
+              }
+              else {
+                changeObject.minutes = null;
+              }
             }
           }
 
           function adjustHours() {
             changeObject.hours -= 1;
             if (changeObject.hours === -1) {
-              changeObject.hours = 23;
-              adjustDays();
+              if (changeObject.days !== null) {
+                changeObject.hours = 23;
+                adjustDays();
+              }
+              else {
+                changeObject.hours = null;
+              }
             }
           }
 
           function adjustDays() {
-            changeObject.days = Math.max(0, changeObject.days - 1);
+            changeObject.days -= 1;
+            if (changeObject.days <= 0) {
+              changeObject.days = null;
+            }
           }
 
           function adjustDisplay() {
             Object.keys(changeObject).forEach(key => {
-              if (changeObject[key] !== timeObject[key].time) {
+              if (changeObject[key] === null) {
+                timeObject[key].container.innerText = '';
+              }
+              else if (changeObject !== timeObject[key].time){
                 timeObject[key].time = changeObject[key];
                 timeObject[key].display.innerText = changeObject[key];
               }
