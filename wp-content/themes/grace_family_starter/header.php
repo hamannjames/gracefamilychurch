@@ -54,7 +54,7 @@
         <ul id="main-nav_toolbar_menu">
           <li></li>
           <li>
-            <h2 id="main-nav_toolbar_heading">
+            <h2 id="main-nav_toolbar_heading" style="text-align: center;">
             <a href="https://gracefamily.online.church/"><strong>We are live!</strong></a>
               <!--
               Live in: <span id="live-countdown" class="live-countdown">
