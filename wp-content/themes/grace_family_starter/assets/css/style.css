@@ -687,12 +687,11 @@ figure {
   display: flex;
 }
 #main-nav_toolbar_menu > li {
-  flex-grow: 1;
   list-style: none;
   flex-grow: 1;
 }
 #main-nav_toolbar_menu > li:nth-child(2) {
-  flex-grow: 0;
+  flex-grow: 1;
   flex-basis: 370px;
 }
 #main-nav_toolbar_heading {
@@ -700,6 +699,8 @@ figure {
   margin: 0;
   font-weight: bold;
   color: #fff;
+  text-align: center;
+  width: 100%;
 }
 #main-nav_toolbar_heading .live-countdown {
   font-weight: normal;
