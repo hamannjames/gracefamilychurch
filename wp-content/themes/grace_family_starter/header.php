@@ -164,6 +164,9 @@
             seconds: Math.max(Math.floor(secondsTill), 0)
           }
 
+          countdown.innerHTML = '<a href="https://gracefamily.online.church/"><strong>We are live!</strong></a>';
+            return;
+
           if (changeObject.days <= 0) {
             changeObject.days = null;
           }
@@ -184,6 +187,8 @@
             countdown.innerHTML = '<a href="https://gracefamily.online.church/"><strong>We are live!</strong></a>';
             return;
           }
+
+          console.log(changeObject);
 
           function adjustSeconds() {
             if (theDate - Date.now() < 1) {
