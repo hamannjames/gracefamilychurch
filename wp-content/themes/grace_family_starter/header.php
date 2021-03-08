@@ -55,15 +55,14 @@
           <li></li>
           <li>
             <h2 id="main-nav_toolbar_heading" style="text-align: center;">
-            <a href="https://gracefamily.online.church/"><strong>We are live!</strong></a>
-              <!--
+      
               Live in: <span id="live-countdown" class="live-countdown">
                 <span id="live-countdown_days--container"><span id="live-countdown_days" class="live-countdown"></span> day(s),&nbsp;</span>
                 <span id="live-countdown_hours--container"><span id="live-countdown_hours" class="live-countdown"></span> hour(s),&nbsp;</span>
                 <span id="live-countdown_minutes--container"><span id="live-countdown_minutes" class="live-countdown"></span> minute(s)<span id="live-countdown_minutes--comma">,&nbsp;</span></span>
                 <span id="live-countdown_seconds--container"><span id="live-countdown_seconds" class="live-countdown"></span> <span class="live-countdown_seconds">second(s)</span></span>
               </span>
-  -->
+  
             </h2>
           </li>
           <li id="main-nav_toobar_social">
@@ -126,11 +125,11 @@
         }, 100, true));
 
         window.addEventListener('load', function(){
-          return;
           const countdown = document.getElementById('live-countdown');
-          const theDate = new Date("March 7, 2021 16:00:00");
+          const theDate = new Date("March 14, 2021 16:00:00");
           const timeTill = theDate - Date.now();
           if (timeTill < 1) {
+            countdown.innerHTML = '<a href="https://gracefamily.online.church/"><strong>We are live!</strong></a>';
             return;
           }
           let daysTill = timeTill / 1000 / 60 / 60 / 24;
@@ -168,9 +167,6 @@
             seconds: Math.max(Math.floor(secondsTill), 0)
           }
 
-          countdown.innerHTML = '<a href="https://gracefamily.online.church/"><strong>We are live!</strong></a>';
-            return;
-
           if (changeObject.days <= 0) {
             changeObject.days = null;
           }
@@ -191,8 +187,6 @@
             countdown.innerHTML = '<a href="https://gracefamily.online.church/"><strong>We are live!</strong></a>';
             return;
           }
-
-          console.log(changeObject);
 
           function adjustSeconds() {
             if (theDate - Date.now() < 1) {
