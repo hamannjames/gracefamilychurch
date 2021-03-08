@@ -54,7 +54,7 @@
         <ul id="main-nav_toolbar_menu">
           <li></li>
           <li>
-            <h2 id="main-nav_toolbar_heading" style="text-align: center;">
+            <h2 id="main-nav_toolbar_heading">
       
               Live in: <span id="live-countdown" class="live-countdown">
                 <span id="live-countdown_days--container"><span id="live-countdown_days" class="live-countdown"></span> day(s),&nbsp;</span>
