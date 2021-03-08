@@ -516,10 +516,6 @@ figure {
   box-shadow: 5px 5px 10px #444;
 }
 
-#wpadminbar {
-  display: none;
-}
-
 .header_wrapper {
   position: fixed;
   top: 0;
