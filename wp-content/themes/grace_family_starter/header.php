@@ -55,13 +55,16 @@
           <li></li>
           <li>
             <h2 id="main-nav_toolbar_heading">
+              Live today at 4PM! <a style="font-size: inherit;" href="https://gracefamily.online.church/">Watch here</a>
       
+              <!--
               Live in: <span id="live-countdown" class="live-countdown">
                 <span id="live-countdown_days--container"><span id="live-countdown_days" class="live-countdown"></span> day(s),&nbsp;</span>
                 <span id="live-countdown_hours--container"><span id="live-countdown_hours" class="live-countdown"></span> hour(s),&nbsp;</span>
                 <span id="live-countdown_minutes--container"><span id="live-countdown_minutes" class="live-countdown"></span> minute(s)<span id="live-countdown_minutes--comma">,&nbsp;</span></span>
                 <span id="live-countdown_seconds--container"><span id="live-countdown_seconds" class="live-countdown"></span> <span class="live-countdown_seconds">second(s)</span></span>
               </span>
+              -->
   
             </h2>
           </li>
