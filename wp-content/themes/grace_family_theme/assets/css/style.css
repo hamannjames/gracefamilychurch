@@ -1,3 +1,7 @@
+#wpadminbar {
+  display: none;
+}
+
 html {
   line-height: 1.15;
   /* 1 */

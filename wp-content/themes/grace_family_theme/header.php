@@ -49,22 +49,25 @@
 </head>
 <body class="home">
   <header class="header_wrapper" role="banner">
+    <?php if (function_exists('get_field') && get_field('service_day', 'options')) :
+      $service_time = get_field('service_time', 'options');
+      $service_day = get_field('service_day', 'options');
+      $service_duration = get_field('service_duration', 'options');
+    ?>
     <section id="main-nav_toolbar_wrapper">
       <div id="main-nav_toolbar_container">
         <ul id="main-nav_toolbar_menu">
           <li></li>
           <li>
             <h2 id="main-nav_toolbar_heading">
-              Live today at 4PM! <a style="font-size: inherit;" href="https://gracefamily.online.church/">Watch here</a>
-      
-              <!--
+              
               Live in: <span id="live-countdown" class="live-countdown">
                 <span id="live-countdown_days--container"><span id="live-countdown_days" class="live-countdown"></span> day(s),&nbsp;</span>
                 <span id="live-countdown_hours--container"><span id="live-countdown_hours" class="live-countdown"></span> hour(s),&nbsp;</span>
                 <span id="live-countdown_minutes--container"><span id="live-countdown_minutes" class="live-countdown"></span> minute(s)<span id="live-countdown_minutes--comma">,&nbsp;</span></span>
                 <span id="live-countdown_seconds--container"><span id="live-countdown_seconds" class="live-countdown"></span> <span class="live-countdown_seconds">second(s)</span></span>
               </span>
-              -->
+              
   
             </h2>
           </li>
@@ -78,6 +81,7 @@
         </ul>
       </div>
     </section>
+    <?php endif; ?>
     <div class="header_container">
       <div id="main-logo_wrapper">
         <figure id="main-logo_container">
@@ -127,14 +131,30 @@
           }
         }, 100, true));
 
+        <?php if(isset($service_day)) : ?>
+
         window.addEventListener('load', function(){
           const countdown = document.getElementById('live-countdown');
-          const theDate = new Date("March 14, 2021 16:00:00");
+          const daysOfWeek = ['sunday', 'monday', 'tuesday', 'wendesday', 'thursday', 'friday', 'saturday'];
+          const dayOfService = daysOfWeek.indexOf('<?php echo $service_day; ?>');
+          const durationOfService = '<?php echo $service_duration; ?>';
+          const timeOfServiceArray = '<?php echo $service_time; ?>'.split(':');
+
+          const freshDate = new Date();
+          const freshTime = freshDate.setHours(0,0,0,0);
+          const timeUntilService = freshDate.setHours(timeOfServiceArray[0], timeOfServiceArray[1], timeOfServiceArray[2]) - freshTime;
+          freshDate.setHours(0,0,0,0);
+
+          const daysUntilService = dayOfService - freshDate.getDay() + 7;
+          const theDate = new Date(freshDate.getTime() + daysUntilService * (1000 * 60 * 60 * 24) + timeUntilService);
+          console.log(theDate);
           const timeTill = theDate - Date.now();
+          /*
           if (timeTill < 1) {
             countdown.innerHTML = '<a href="https://gracefamily.online.church/"><strong>We are live!</strong></a>';
             return;
           }
+          */
           let daysTill = timeTill / 1000 / 60 / 60 / 24;
           let hoursTill = (daysTill - Math.floor(daysTill)) * 24;
           let minutesTill = (hoursTill - Math.floor(hoursTill)) * 60
@@ -262,6 +282,7 @@
 
           setInterval(adjustSeconds, 1000);
         });
+      <?php endif; ?>
       </script>
     </div>
   </header>
