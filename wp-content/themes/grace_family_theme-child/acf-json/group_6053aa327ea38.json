@@ -1,0 +1,121 @@
+{
+    "key": "group_6053aa327ea38",
+    "title": "Settings - Service",
+    "fields": [
+        {
+            "key": "field_6053aa328a2f2",
+            "label": "Service Day",
+            "name": "service_day",
+            "type": "select",
+            "instructions": "Pick day of service",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "sunday": "Sunday",
+                "monday": "Monday",
+                "tuesday": "Tuesday",
+                "wednesday": "Wednesday",
+                "thursday": "Thursday",
+                "friday": "Friday",
+                "saturday": "Saturday"
+            },
+            "default_value": false,
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_6053aa328a2fb",
+            "label": "Service Time",
+            "name": "service_time",
+            "type": "time_picker",
+            "instructions": "Pick Time of next Service",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6053aa328a2f2",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "g:i a",
+            "return_format": "H:i:s"
+        },
+        {
+            "key": "field_6053aa328a303",
+            "label": "Service Duration",
+            "name": "service_duration",
+            "type": "number",
+            "instructions": "How many hours will the service last?",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6053aa328a2f2",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_6053aa328a311",
+            "label": "Live Link",
+            "name": "live_link",
+            "type": "url",
+            "instructions": "Link to send people when your service is live",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-service"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1616095811
+}

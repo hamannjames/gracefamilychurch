@@ -6,7 +6,26 @@ Plugin Name: Grace Family Church Settings
 
 if (function_exists('acf_add_options_page')) {
   acf_add_options_page(array(
-    'page_title' => 'GFC Settings'
+    'page_title' => 'GFC General Settings',
+    'menu_slug' => 'gfc-general-settings'
+  ));
+
+  acf_add_options_sub_page(array(
+    'page_title' => 'GFC Branding Settings',
+    'menu_title' => 'Branding',
+    'parent_slug' => 'gfc-general-settings'
+  ));
+
+  acf_add_options_sub_page(array(
+    'page_title' => 'GFC Social Settings',
+    'menu_title' => 'Social',
+    'parent_slug' => 'gfc-general-settings'
+  ));
+
+  acf_add_options_sub_page(array(
+    'page_title' => 'GFC Service Settings',
+    'menu_title' => 'Service',
+    'parent_slug' => 'gfc-general-settings'
   ));
 }
  
