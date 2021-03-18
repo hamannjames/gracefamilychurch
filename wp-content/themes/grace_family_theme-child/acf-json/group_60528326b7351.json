@@ -1,0 +1,129 @@
+{
+    "key": "group_60528326b7351",
+    "title": "Settings - General",
+    "fields": [
+        {
+            "key": "field_6052832ef1996",
+            "label": "Logo",
+            "name": "gfc_logo",
+            "type": "image",
+            "instructions": "Logo for Grace Family Church",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_6052892df1998",
+            "label": "Service Day",
+            "name": "service_day",
+            "type": "select",
+            "instructions": "Pick day of service",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "sunday": "Sunday",
+                "monday": "Monday",
+                "tuesday": "Tuesday",
+                "wednesday": "Wednesday",
+                "thursday": "Thursday",
+                "friday": "Friday",
+                "saturday": "Saturday"
+            },
+            "default_value": false,
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_605287f8f1997",
+            "label": "Service Time",
+            "name": "service_time",
+            "type": "time_picker",
+            "instructions": "Pick Time of next Service",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6052892df1998",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "g:i a",
+            "return_format": "H:i:s"
+        },
+        {
+            "key": "field_60528d8cd315e",
+            "label": "Service Duration",
+            "name": "service_duration",
+            "type": "number",
+            "instructions": "How many hours will the service last?",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6052892df1998",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-gfc-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1616025775
+}
